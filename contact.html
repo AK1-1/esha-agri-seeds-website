@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Esha Agri Seeds Pvt Ltd</title>
+  <meta name="description" content="Contact Esha Agri Seeds for product inquiries, dealership opportunities, or technical support. Hyderabad, Telangana.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header" id="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo"><div class="logo-icon">E</div><div class="logo-text"><h2>Esha Agri Seeds</h2><span>Pvt. Ltd.</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li>
+      <li class="dropdown"><a class="dropdown-toggle">Products</a><div class="dropdown-menu">
+        <a href="products.html?crop=tomato">Tomato</a><a href="products.html?crop=chilli">Chilli</a>
+        <a href="products.html?crop=watermelon">Watermelon</a><a href="products.html?crop=okra">Okra</a>
+      </div></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html" class="nav-cta active">Contact Us</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <span>Contact Us</span></div>
+    <span class="tag">Get In Touch</span>
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Reach out for product inquiries, dealership opportunities, or technical support.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="contact-grid reveal">
+      <div class="contact-card">
+        <h3>Head Office</h3>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <div><h4>Address</h4><p>ESHA AGRI SEEDS PVT LTD.<br>Sri Venkateshwara Colony,<br>Road No. 11, Shed No. 1A,<br>Tattiannaram, Hayatnagar,<br>Ranga Reddy dt, Hyderabad-500068<br>Telangana, INDIA</p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📞</div>
+          <div><h4>Phone</h4><p><a href="tel:+919848044861" style="color:var(--green-600);">+91-9848044861</a><br><a href="tel:+917893069900" style="color:var(--green-600);">+91-7893069900</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">✉️</div>
+          <div><h4>Email</h4><p><a href="mailto:info@eshaagriseeds.com" style="color:var(--green-600);">info@eshaagriseeds.com</a></p></div>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">🕐</div>
+          <div><h4>Business Hours</h4><p>Monday – Saturday<br>9:00 AM – 6:00 PM IST</p></div>
+        </div>
+        <!-- Map embed -->
+        <div style="border-radius:var(--radius-md); overflow:hidden; margin-top:16px;">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3808.123!2d78.5841!3d17.3236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTfCsDE5JzI1LjAiTiA3OMKwMzUnMDIuOCJF!5e0!3m2!1sen!2sin!4v1" width="100%" height="200" style="border:0;" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+      <div class="contact-card">
+        <h3>Send us a Message</h3>
+        <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" placeholder="Enter your full name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address *</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" placeholder="What is this regarding?" required>
+          </div>
+          <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" placeholder="Tell us more about your inquiry..." required></textarea>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">Send Message →</button>
+        </form>
+        <div id="successMsg" style="display:none; text-align:center; padding:40px 20px;">
+          <div style="font-size:3rem; margin-bottom:16px;">✅</div>
+          <h3 style="color:var(--green-700); margin-bottom:8px;">Message Sent!</h3>
+          <p style="color:var(--text-muted);">Thank you for reaching out. We'll get back to you within 24-48 hours.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer"><div class="container"><div class="footer-bottom"><p>© 2024 Esha Agri Seeds Pvt. Ltd. All Rights Reserved.</p><p>Cultivating Excellence in Every Seed 🌱</p></div></div></footer>
+<script>
+window.addEventListener('scroll', () => { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
+document.getElementById('mobileToggle').addEventListener('click', () => { const n = document.getElementById('navLinks'); n.classList.toggle('open'); document.getElementById('mobileToggle').textContent = n.classList.contains('open') ? '✕' : '☰'; });
+const obs = new IntersectionObserver(e => e.forEach(x => { if(x.isIntersecting) x.target.classList.add('visible'); }), {threshold:.1});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('submitBtn').textContent = 'Sending...';
+  setTimeout(() => {
+    document.getElementById('contactForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+  }, 1000);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Esha Agri Seeds Pvt Ltd</title>
+  <meta name="description" content="Browse our complete range of premium hybrid vegetable seeds - Tomato, Chilli, Watermelon, Okra, Capsicum and more.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header" id="site-header">
+  <nav class="nav-inner">
+    <a href="index.html" class="logo"><div class="logo-icon">E</div><div class="logo-text"><h2>Esha Agri Seeds</h2><span>Pvt. Ltd.</span></div></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li class="dropdown">
+        <a class="dropdown-toggle active">Products</a>
+        <div class="dropdown-menu">
+          <a href="products.html?crop=tomato">Tomato</a><a href="products.html?crop=chilli">Chilli</a>
+          <a href="products.html?crop=watermelon">Watermelon</a><a href="products.html?crop=melon">Melon</a>
+          <a href="products.html?crop=cucumber">Cucumber</a><a href="products.html?crop=okra">Okra</a>
+          <a href="products.html?crop=brinjal">Brinjal</a><a href="products.html?crop=capsicum">Capsicum</a>
+          <a href="products.html?crop=cabbage">Cabbage</a><a href="products.html?crop=cauliflower">Cauliflower</a>
+          <a href="products.html?crop=beans">Beans</a><a href="products.html?crop=ridgegourd">Ridge Gourd</a>
+          <a href="products.html?crop=bottlegourd">Bottle Gourd</a><a href="products.html?crop=bittergourd">Bitter Gourd</a>
+          <a href="products.html?crop=spongegourd">Sponge Gourd</a><a href="products.html?crop=pumpkin">Pumpkin</a>
+          <a href="products.html?crop=coriander">Coriander</a><a href="products.html?crop=sweetcorn">Sweet Corn</a>
+          <a href="products.html?crop=beetroot">Beetroot</a><a href="products.html?crop=carrot">Carrot</a>
+          <a href="products.html?crop=radish">Radish</a><a href="products.html?crop=onion">Onion</a>
+        </div>
+      </li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu">☰</button>
+  </nav>
+</header>
+
+<section class="page-hero" id="pageHero">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">Home</a> / <a href="products.html">Products</a> / <span id="breadcrumbCrop">All Crops</span></div>
+    <span class="tag" id="heroTag">Premium Seeds</span>
+    <h1 id="heroTitle">Our Product Range</h1>
+    <p id="heroDesc">Explore our comprehensive collection of high-yielding, disease-resistant hybrid vegetable seeds bred for Indian farming conditions.</p>
+  </div>
+</section>
+
+<!-- Crop Filter Bar -->
+<div style="background:var(--white); border-bottom:1px solid var(--green-100); padding:16px 0; position:sticky; top:73px; z-index:50;">
+  <div class="container">
+    <div style="display:flex; flex-wrap:wrap; gap:8px; justify-content:center;" id="cropFilters">
+      <button class="crop-btn active" data-crop="all">All Crops</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .crop-btn { padding:8px 18px; border:1.5px solid var(--green-200); border-radius:100px; background:var(--white); color:var(--green-700); font-size:.82rem; font-weight:600; cursor:pointer; transition:var(--transition); font-family:'Inter',sans-serif; }
+  .crop-btn:hover,.crop-btn.active { background:var(--green-600); color:#fff; border-color:var(--green-600); }
+</style>
+
+<section class="section">
+  <div class="container">
+    <div class="varieties-grid" id="varietiesGrid" style="padding:0;"></div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2024 Esha Agri Seeds Pvt. Ltd. All Rights Reserved.</p>
+      <p>Cultivating Excellence in Every Seed 🌱</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+const CROPS = {
+  tomato: {
+    name: "Tomato Hybrids", emoji: "🍅", scientific: "Solanum lycopersicum",
+    desc: "TYLCV & FCR resistant varieties for high yield and excellent transport quality.",
+    varieties: [
+      { name: "SAMARTHA F1", desc: "Vigorous, early maturing. Oval shape, attractive red, 80-90 gm. Highly firm, suitable for long distance transport.", specs: ["Early Maturing","80-90 gm","Oval Shape","TLCV Tolerant"] },
+      { name: "MAHARAJA F1", desc: "Highly vigorous determinate with excellent foliage. Square round, glossy red, 80-90 gm. Tolerant to bacterial wilt and TLCV. Year-round.", specs: ["Determinate","80-90 gm","Bacterial Wilt Tolerant","Year Round"] },
+      { name: "SONALI F1", desc: "Semi-determinate, vigorous. Acidic desi type, attractive red, 90 gm. Good keeping quality. Moderate TLCV tolerance.", specs: ["Semi-Determinate","90 gm","Desi Type","TLCV Moderate"] },
+      { name: "RASNA F1", desc: "Semi-determinate, early maturity. Acidic desi type, medium round, 90-110 gm. Intermediate TLCV resistance.", specs: ["Early Maturity","90-110 gm","IR TLCV","Year Round"] },
+      { name: "AADRIKA F1", desc: "Highly vigorous indeterminate. Round to oblate, cluster bearing, 90-110 gm. Suitable for hilly areas.", specs: ["Indeterminate","90-110 gm","Cluster Bearing","Hilly Areas"] },
+      { name: "SATYA BHAMA F1", desc: "Semi-determinate, vigorous. Flat round, acidic. 80-100 gm. Heat set hybrid for summer sowings. First harvest 60-65 DAT.", specs: ["Heat Tolerant","80-100 gm","Summer Sowing","TLCV Tolerant"] },
+      { name: "BHAMA F1", desc: "Determinate, vigorous with good foliage. Early, acidic desi type, deep red, 80-90 gm. Good firmness, long distance transport.", specs: ["Very Early","80-90 gm","Determinate","TLCV Tolerant"] },
+      { name: "KAMAKSHI F1", desc: "Vigorous tall determinate. Flat round with green shoulder, 85-90 gm. Very firm, acidic. First harvest 60-65 DAT.", specs: ["Tall Determinate","85-90 gm","Firm Fruit","TLCV Medium"] },
+      { name: "MEENAKSHI F1", desc: "Vigorous, tall det to semi-det. Flat round, green shoulder, acidic. 95-110 gm. Very high yield. Harvest 65-70 DAT.", specs: ["Very High Yield","95-110 gm","High Keeping","TLCV Medium"] },
+      { name: "SATYA F1", desc: "Vigorous tall det to semi-det. Flat round, green shoulder, acidic. 90-100 gm. Excellent long distance transport. IR TLCV.", specs: ["IR TLCV","90-100 gm","Transport Quality","High Yield"] }
+    ]
+  },
+  chilli: {
+    name: "Chilli Hybrids", emoji: "🌶️", scientific: "Capsicum annuum",
+    desc: "Dual-purpose hybrids for fresh green and dry red chilli markets with high pungency and colour values.",
+    varieties: [
+      { name: "JAYAHO F1", desc: "Medium tall 3.5-4 ft, spreading. Dark green 7-8 cm, high pungent. SHU 90,000 / ASTA 80-90. Best for exports.", specs: ["SHU 90,000","ASTA 80-90","Export Quality","Red Dry"] },
+      { name: "RANA F1", desc: "Tall 3.5-4 ft, spreading, vigorous. Short 6-8 cm, deep red. SHU 90,000 / ASTA 85-90. High industrial value.", specs: ["SHU 90,000","ASTA 85-90","Industrial","Export"] },
+      { name: "THARAK F1", desc: "Tall 4 ft, well branching. Short 7-8 cm, SHU 100,000 / ASTA 85-90. Premium export hybrid.", specs: ["SHU 100,000","ASTA 85-90","Premium","Export"] },
+      { name: "INDRAJIT F1", desc: "Medium tall, bushy. 14-15 cm, Byadagi segment. ASTA 95-100, low pungent SHU 15-20K. High export quality dry chilli.", specs: ["Byadagi Type","ASTA 95-100","Low Pungent","Export"] },
+      { name: "ESHA GOLD F1", desc: "Medium tall, vigorous. 10-12 cm, glossy, SHU 65,000 / ASTA 80. Transparent deep red after drying. Top premium dual purpose.", specs: ["Dual Purpose","SHU 65,000","Premium","60 DAT"] },
+      { name: "ESHA 55 F1", desc: "Tall spreading, vigorous. 9-10 cm, SHU 60,000 / ASTA 80-90. Excellent colour retention. Dual purpose.", specs: ["Dual Purpose","SHU 60,000","ASTA 80-90","Colour Retention"] },
+      { name: "DRONA F1", desc: "Medium tall 3-3.5 ft, sturdy. 15 cm, SHU 20-25K / ASTA 70-80. Suitable for dry and black soils.", specs: ["SHU 20-25K","ASTA 70-80","All Soils","High Yield"] },
+      { name: "KOHINOOR DELUXE F1", desc: "Tall bushy spreading. Oily dark appearance, high wrinkles. ASTA 90-100 / SHU 40-45K. Byadagi segment.", specs: ["Byadagi","ASTA 90-100","SHU 40-45K","Best Price"] },
+      { name: "NAYANATARA F1", desc: "Medium tall spreading. Yellowish lustrous green, 13-14 cm, wrinkled. Pusajwala market. 55-60 DAT.", specs: ["Green Fresh","Pusajwala","55-60 DAT","Year Round"] },
+      { name: "TRISHA F1", desc: "Medium tall 3-3.5 ft, spreading. Light parrot green, 15-16 cm. SHU 42,000. Green fresh. 60 DAT.", specs: ["Green Fresh","SHU 42,000","15-16 cm","Year Round"] },
+      { name: "SHOBA F1", desc: "Medium tall 3-3.25 ft, vigorous. Light green, 15-16 cm, smooth. Best for green fresh, year round.", specs: ["Green Fresh","15-16 cm","Smooth","Year Round"] },
+      { name: "RADHA F1", desc: "Medium tall, dark green foliage. 12-13 cm, thick skin, medium pungent. Excellent for fresh market and bajji.", specs: ["Fresh Market","12-13 cm","Thick Skin","Bajji Type"] }
+    ]
+  },
+  watermelon: {
+    name: "Watermelon Hybrids", emoji: "🍉", scientific: "Citrullus lanatus",
+    desc: "High-TSS, sweet-fleshed hybrids in ice box and large fruit segments with excellent transport quality.",
+    varieties: [
+      { name: "KUBER F1", desc: "Highly vigorous, medium early 75-80 days. Oval to oblong, light green with dark stripes. Red, juicy, TSS 12-13%. Weight 7-8 kg.", specs: ["TSS 12-13%","7-8 kg","75-80 Days","Oblong"] },
+      { name: "BAMA F1", desc: "Highly vigorous, 85-90 days. Oval to oblong, crimson red flesh. TSS 13-14%. Weight 9-10 kg. Excellent keeping quality.", specs: ["TSS 13-14%","9-10 kg","85-90 Days","Crimson Red"] },
+      { name: "CHATHRAPATI F1", desc: "Sugar baby type, 75-80 days. Round, solid dark green rind. Bright red, very sweet. TSS 12-13%. Weight 5-8 kg.", specs: ["Sugar Baby","TSS 12-13%","5-8 kg","Round"] },
+      { name: "VIKRAM F1", desc: "Ice box type, 60-65 days. Oval, deep dark green rind. Crimson flesh, TSS 12-13%. Weight 2.5-3 kg. Early.", specs: ["Ice Box","60-65 Days","2.5-3 kg","Early"] },
+      { name: "SHIVAJI F1", desc: "Ice box type, 60-65 days. Oval, greenish black with stripes. Deep crimson, TSS 12-13%. Weight 2.5-3 kg.", specs: ["Ice Box","60-65 Days","2.5-3 kg","Striped"] },
+      { name: "BLACK GOLD F1", desc: "Vigorous ice box type. Dark green to black. TSS 13-14%, deep crimson red flesh. Weight 2.5 kg.", specs: ["Ice Box","TSS 13-14%","2.5 kg","Black Rind"] }
+    ]
+  },
+  melon: { name: "Melon Hybrids", emoji: "🍈", scientific: "Cucumis melo", desc: "Thick skin, thick flesh with mild musky flavour. Resistant to powdery & downy mildew, CMV and fruit fly.", varieties: [
+    { name: "Premium Melon Hybrids", desc: "Thick skin, thick flesh with good consistency and mild musky flavour. Attractive outer colour, small hollowness, resistant to powdery mildew, downy mildew, CMV and fruit fly.", specs: ["Thick Flesh","Disease Resistant","Musky Flavour","Low Hollowness"] }
+  ]},
+  cucumber: { name: "Cucumber Hybrids", emoji: "🥒", scientific: "Cucumis sativus", desc: "High-yielding cucumber hybrids for fresh market.", varieties: [
+    { name: "Premium Cucumber Hybrids", desc: "High-yielding cucumber hybrids bred for fresh market with excellent fruit quality, uniformity and disease resistance.", specs: ["High Yield","Fresh Market","Uniform","Disease Resistant"] }
+  ]},
+  okra: { name: "Okra Hybrids", emoji: "🟢", scientific: "Abelmoschus esculentus", desc: "YVMV resistant hybrids with improved yield under adverse conditions including drought tolerance.", varieties: [
+    { name: "Premium Okra Hybrids", desc: "YVMV disease resistant with high yield under water-limited conditions. High specific combining ability for plant height, nodes, fruit diameter, weight and fruits per plant.", specs: ["YVMV Resistant","Drought Tolerant","High Yield","Multi-Season"] }
+  ]},
+  brinjal: { name: "Brinjal Hybrids", emoji: "🍆", scientific: "Solanum melongena", desc: "Varieties in long, round, and various colours with TMV resistance, focused on quality and productivity.", varieties: [
+    { name: "Premium Brinjal Hybrids", desc: "Varieties in long, half long, round shapes. Colours: black, white purple, purple long, green, purple round with stripes. TMV resistance. Quality and productivity focused.", specs: ["Multiple Shapes","Multiple Colors","TMV Resistant","High Productivity"] }
+  ]},
+  capsicum: { name: "Capsicum Hybrids", emoji: "🫑", scientific: "Capsicum annuum", desc: "High fruit set and yield under diverse growing conditions with abiotic stress tolerance.", varieties: [
+    { name: "Premium Capsicum Hybrids", desc: "New breeding lines with high fruit set and yield under range of growing conditions. Emphasis on pungency, aroma, and tolerance to low temperatures, hydric stress and saline stress.", specs: ["High Fruit Set","Stress Tolerant","Multi-Condition","Aromatic"] }
+  ]},
+  cabbage: { name: "Cabbage Hybrids", emoji: "🥬", scientific: "Brassica oleracea", desc: "High reliable yields, uniformity, crisp compact heads with multiple disease resistance.", varieties: [
+    { name: "Premium Cabbage Hybrids", desc: "Crisp compact heads, good flavour and high nutrient value. Resistance to Clubroot, black rot, fusarium yellows, downy/powdery mildew, tip burn. Cold and heat tolerance.", specs: ["Compact Heads","Multi-Disease Resistant","Heat Tolerant","Cold Tolerant"] }
+  ]},
+  cauliflower: { name: "Cauliflower Hybrids", emoji: "🥦", scientific: "Brassica oleracea var. botrytis", desc: "Premium cauliflower hybrids with compact white curds.", varieties: [
+    { name: "Premium Cauliflower Hybrids", desc: "Compact white curds with high yield and uniformity. Disease resistant varieties suitable for multiple seasons.", specs: ["Compact Curds","Uniform","Disease Resistant","Multi-Season"] }
+  ]},
+  beans: { name: "Beans Varieties", emoji: "🫘", scientific: "Phaseolus vulgaris", desc: "Line pyramiding for wide and durable resistance to pathogens including rust.", varieties: [
+    { name: "Premium Bean Varieties", desc: "Advanced lines with wide durable pathogen resistance through line pyramiding. Rust resistance through backcross programs after 3-4 backcrosses.", specs: ["Rust Resistant","Durable Resistance","High Yield","Backcross Lines"] }
+  ]},
+  ridgegourd: { name: "Ridge Gourd Hybrids", emoji: "🟢", scientific: "Luffa acutangula", desc: "High-yielding ridge gourd hybrids.", varieties: [{ name: "Premium Ridge Gourd Hybrids", desc: "High-yielding hybrids with excellent fruit quality and uniformity.", specs: ["High Yield","Uniform","Quality Fruit"] }]},
+  bottlegourd: { name: "Bottle Gourd Hybrids", emoji: "🟢", scientific: "Lagenaria siceraria", desc: "Premium bottle gourd hybrids.", varieties: [{ name: "Premium Bottle Gourd Hybrids", desc: "High-yielding hybrids with excellent shape and uniformity.", specs: ["High Yield","Uniform Shape","Disease Resistant"] }]},
+  bittergourd: { name: "Bitter Gourd Hybrids", emoji: "🟢", scientific: "Momordica charantia", desc: "Premium bitter gourd hybrids.", varieties: [{ name: "Premium Bitter Gourd Hybrids", desc: "High-yielding hybrids with excellent bitter taste and disease resistance.", specs: ["High Yield","Good Bitterness","Disease Resistant"] }]},
+  spongegourd: { name: "Sponge Gourd Hybrids", emoji: "🟢", scientific: "Luffa cylindrica", desc: "Premium sponge gourd hybrids.", varieties: [{ name: "Premium Sponge Gourd Hybrids", desc: "High-yielding hybrids suitable for various seasons.", specs: ["High Yield","Multi-Season","Uniform"] }]},
+  pumpkin: { name: "Pumpkin Hybrids", emoji: "🎃", scientific: "Cucurbita moschata", desc: "Premium pumpkin hybrids.", varieties: [{ name: "Premium Pumpkin Hybrids", desc: "High-yielding pumpkin hybrids with excellent flesh quality.", specs: ["High Yield","Good Flesh","Storage Quality"] }]},
+  coriander: { name: "Coriander Varieties", emoji: "🌿", scientific: "Coriandrum sativum", desc: "Premium coriander varieties.", varieties: [{ name: "Premium Coriander Varieties", desc: "High-yielding coriander varieties with excellent leaf quality and aroma.", specs: ["High Yield","Aromatic","Quality Leaf"] }]},
+  sweetcorn: { name: "Sweet Corn Hybrids", emoji: "🌽", scientific: "Zea mays var. saccharata", desc: "Premium sweet corn hybrids.", varieties: [{ name: "Premium Sweet Corn Hybrids", desc: "High sugar content sweet corn hybrids with excellent ear quality.", specs: ["High Sugar","Good Ear","Sweet"] }]},
+  beetroot: { name: "Beetroot Varieties", emoji: "🟣", scientific: "Beta vulgaris", desc: "Premium beetroot varieties.", varieties: [{ name: "Premium Beetroot Varieties", desc: "Deep red beetroot varieties with high yield and uniform roots.", specs: ["Deep Red","Uniform","High Yield"] }]},
+  carrot: { name: "Carrot Varieties", emoji: "🥕", scientific: "Daucus carota", desc: "Premium carrot varieties.", varieties: [{ name: "Premium Carrot Varieties", desc: "High-yielding carrot varieties with excellent root quality and colour.", specs: ["High Yield","Good Colour","Uniform Roots"] }]},
+  radish: { name: "Radish Varieties", emoji: "⚪", scientific: "Raphanus sativus", desc: "Premium radish varieties.", varieties: [{ name: "Premium Radish Varieties", desc: "High-yielding radish varieties with crisp white roots.", specs: ["Crisp","White Roots","High Yield"] }]},
+  onion: { name: "Onion Varieties", emoji: "🧅", scientific: "Allium cepa", desc: "Premium onion varieties.", varieties: [{ name: "Premium Onion Varieties", desc: "High-yielding onion varieties with excellent storage quality.", specs: ["Storage Quality","High Yield","Uniform Bulbs"] }]}
+};
+
+function renderCrop(cropKey) {
+  const crop = CROPS[cropKey];
+  if (!crop) return;
+  document.getElementById('heroTitle').textContent = crop.emoji + ' ' + crop.name;
+  document.getElementById('heroDesc').textContent = crop.desc;
+  document.getElementById('heroTag').textContent = crop.scientific;
+  document.getElementById('breadcrumbCrop').textContent = crop.name;
+  renderVarieties(cropKey);
+}
+
+function renderAllCrops() {
+  document.getElementById('heroTitle').textContent = 'Our Product Range';
+  document.getElementById('heroDesc').textContent = 'Explore our comprehensive collection of high-yielding, disease-resistant hybrid vegetable seeds.';
+  document.getElementById('heroTag').textContent = '22+ Crop Categories';
+  document.getElementById('breadcrumbCrop').textContent = 'All Crops';
+  const grid = document.getElementById('varietiesGrid');
+  grid.innerHTML = '';
+  grid.className = 'products-grid';
+  Object.entries(CROPS).forEach(([key, crop]) => {
+    grid.innerHTML += `<div class="product-card"><div class="card-body" style="padding:32px;"><h3>${crop.emoji} ${crop.name}</h3><p style="font-size:.82rem;color:var(--text-muted);font-style:italic;margin-bottom:8px;">${crop.scientific}</p><p>${crop.desc}</p><a href="products.html?crop=${key}" class="card-link">View Varieties →</a></div></div>`;
+  });
+}
+
+function renderVarieties(cropKey) {
+  const grid = document.getElementById('varietiesGrid');
+  grid.innerHTML = '';
+  grid.className = 'varieties-grid';
+  const crop = CROPS[cropKey];
+  crop.varieties.forEach(v => {
+    const specs = v.specs ? v.specs.map(s => `<span class="spec-tag">${s}</span>`).join('') : '';
+    grid.innerHTML += `<div class="variety-card"><h3>${v.name}</h3><p>${v.desc}</p><div class="specs">${specs}</div></div>`;
+  });
+}
+
+// Build filter buttons
+const filterContainer = document.getElementById('cropFilters');
+Object.entries(CROPS).forEach(([key, crop]) => {
+  const btn = document.createElement('button');
+  btn.className = 'crop-btn';
+  btn.dataset.crop = key;
+  btn.textContent = crop.emoji + ' ' + crop.name.replace(' Hybrids','').replace(' Varieties','');
+  filterContainer.appendChild(btn);
+});
+
+// Filter click handling
+filterContainer.addEventListener('click', (e) => {
+  if (!e.target.classList.contains('crop-btn')) return;
+  document.querySelectorAll('.crop-btn').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+  const crop = e.target.dataset.crop;
+  if (crop === 'all') renderAllCrops();
+  else renderCrop(crop);
+  history.replaceState(null, '', crop === 'all' ? 'products.html' : `products.html?crop=${crop}`);
+});
+
+// Init from URL
+const params = new URLSearchParams(window.location.search);
+const initCrop = params.get('crop');
+if (initCrop && CROPS[initCrop]) {
+  renderCrop(initCrop);
+  document.querySelector(`[data-crop="${initCrop}"]`)?.classList.add('active');
+  document.querySelector('[data-crop="all"]')?.classList.remove('active');
+} else {
+  renderAllCrops();
+}
+
+// Header scroll
+window.addEventListener('scroll', () => { document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 50); });
+document.getElementById('mobileToggle').addEventListener('click', () => {
+  const nav = document.getElementById('navLinks'); nav.classList.toggle('open');
+  document.getElementById('mobileToggle').textContent = nav.classList.contains('open') ? '✕' : '☰';
+});
+</script>
+</body>
+</html>
